@@ -38,7 +38,7 @@ const authenticationMiddleware = (req, res, next) => {
         if (res) {
             const uuid = user.get('uuid');
             const type = user.get('type');
-            const token = createToken({ uuid });
+            const token = createToken({ uuid, type });
 
             req.userAuthData = { token, user: { uuid, type } };
             return next();
@@ -49,7 +49,7 @@ const authenticationMiddleware = (req, res, next) => {
     });
 };
 
-const authMiddleware = (req, res, next) => {
+const jwtMiddleware = (req, res, next) => {
     const bearerToken = req.headers['authorization'];
     const splitBearerToken = bearerToken.split(' ');
 
@@ -71,6 +71,6 @@ const authMiddleware = (req, res, next) => {
 
 module.exports = {
     createToken,
-    authMiddleware,
+    jwtMiddleware,
     authenticationMiddleware,
 }

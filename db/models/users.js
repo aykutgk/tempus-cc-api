@@ -20,11 +20,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         email: {
-            type: DataTypes.BLOB,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         phoneNumber: {
-            type: DataTypes.BLOB,
+            type: DataTypes.STRING,
         },
         type: {
             type: DataTypes.ENUM,
@@ -37,6 +37,8 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
 
     User.associate = (models) => {
+        User.hasOne(models.Patient, { foreignKey: 'userId' });
+        User.hasOne(models.Doctor, { foreignKey: 'userId' });
     };
     return User;
 };

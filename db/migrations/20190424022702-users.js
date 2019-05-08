@@ -29,11 +29,11 @@ module.exports = {
         allowNull: false,
       },
       email: {
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       phoneNumber: {
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
       },
       type: {
         type: Sequelize.ENUM,
