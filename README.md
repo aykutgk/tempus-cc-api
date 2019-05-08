@@ -10,7 +10,7 @@ brew install postgresql@9.6
 ### Create database
 ```
 psql --u postgres
-create database disclosures;
+create database tempus;
 ```
 ### init seqelize files
 
