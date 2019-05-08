@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         phoneNumber: {
             type: DataTypes.BLOB,
         },
-        role: {
+        type: {
             type: DataTypes.ENUM,
             values: ['doctor', 'patient'],
             defaultValue: 'patient',

@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
         userId: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            primaryKey: true,
             references: { model: 'Users', key: 'id' },
         },
         birthDate: {
@@ -24,7 +25,10 @@ module.exports = (sequelize, DataTypes) => {
         postalCode: {
             type: DataTypes.STRING,
         },
-    }, {});
+    }, {
+            timestamps: false,
+        }
+    );
 
     Patient.associate = (models) => {
         Patient.belongsTo(models.User, { foreignKey: 'userId' });

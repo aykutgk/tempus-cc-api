@@ -35,7 +35,7 @@ module.exports = {
       phoneNumber: {
         type: Sequelize.BLOB,
       },
-      role: {
+      type: {
         type: Sequelize.ENUM,
         values: ['doctor', 'patient'],
         defaultValue: 'patient',

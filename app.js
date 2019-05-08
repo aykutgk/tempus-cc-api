@@ -1,12 +1,17 @@
-const createError = require('http-errors');
 const express = require('express');
+const cors = require('cors');
 const logger = require('morgan');
 const db = require('./libs/db');
+
+const createError = require('http-errors');
 
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/users');
 
 const app = express();
+
+
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -25,11 +30,11 @@ app.use(function (req, res, next) {
 app.use(function (err, req, res, next) {
 
   // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  const { message, status, code } = err;
+  const error = req.app.get('env') === 'development' ? { message, code } : {};
 
-  res.status(err.status || 500);
-  res.json();
+  res.status(status || 500);
+  res.json(error);
 });
 
 module.exports = app;
