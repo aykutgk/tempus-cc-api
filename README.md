@@ -21,7 +21,7 @@ We can also use rate limitter on sing-in endpoint (Ex: max 10 request per minute
 
 ### Authentication
 
-I choosed signed JWT authentication for stateless sessions. I also choosed to store the token on localStorage. There are pros and cons storing in LocalStorage (XSS attacks: prevented by using frontend sanitization (Angular, Vue, React already does this.)) vs Cookie with httpOnly flag enabled (CSRF attacks). There are many great articles about JWT pros and cons. 
+I choosed signed JWT authentication for stateless sessions. I also choosed to store the token on localStorage. There are pros and cons storing in LocalStorage (XSS attacks: prevented by using frontend sanitization (Angular, Vue, React already does this.)) vs Cookie with httpOnly flag enabled (CSRF attacks). There are many great articles about JWT pros and cons and its safety.  
 
 https://dzone.com/articles/cookies-vs-tokens-the-definitive-guide
 
