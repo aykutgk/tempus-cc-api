@@ -1,8 +1,11 @@
-const { User, Patient, Doctor } = require('../db/models');
+const moment = require('moment');
 
-const { encryptPassword } = require('../libs/bcrypt');
+const { User, Patient, Doctor } = require('../models');
+
+const { encryptPassword } = require('../../libs/bcrypt');
 
 const seedUsers = () => {
+
     const password = 'tempus';
 
     return encryptPassword(password).then(hash => {
@@ -46,7 +49,7 @@ const seedUsers = () => {
                     city: 'SF',
                     state: 'CA',
                     country: 'USA',
-                    zipcode: '94100'
+                    postalCode: '94100'
                 }),
                 Patient.create({
                     userId: pu2.get('id'),
@@ -55,7 +58,7 @@ const seedUsers = () => {
                     city: 'Brooklyn',
                     state: 'NY',
                     country: 'USA',
-                    zipcode: '94100'
+                    postalCode: '94100'
                 }),
                 Doctor.create({
                     userId: du1.get('id')
@@ -64,11 +67,10 @@ const seedUsers = () => {
         }).then(([p1, p2, d1]) => {
             return true;
         });
-
     });
 }
 
 
-module.export = {
+module.exports = {
     seedUsers,
 }
