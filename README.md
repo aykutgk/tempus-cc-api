@@ -45,14 +45,14 @@ psql --u postgres
 create database tempus;
 ```
 
-### run migrations
-```
-node_modules/.bin/sequelize db:migrate
-```
-
 ### install dependencies
 ```
 yarn
+```
+
+### run migrations
+```
+node_modules/.bin/sequelize db:migrate
 ```
 
 ### run application
