@@ -3,7 +3,7 @@
 ## Design and Technical Decisions
 
 ### Data modeling
-Patient and Doctor extends (one to one) from User Data model
+Patient and Doctor extends from User Data model
 which possibly will have common columns such as username, password, email, phone number, created_at...
 
 We also need many to many relationship in order to store doctors' patients or vice versa.
