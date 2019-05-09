@@ -28,6 +28,10 @@ https://dzone.com/articles/cookies-vs-tokens-the-definitive-guide
 https://auth0.com/blog/stateless-auth-for-stateful-minds/
 
 
+## TODO
+All of the backend req and res validations are missing. We should use swagger and automate many of these validations and have custom validations for (email, phone number, zipcode...) both at frontend and backend.
+
+
 ## Dev Environment Setup
 install homebrew on your Mac (https://brew.sh)
 
