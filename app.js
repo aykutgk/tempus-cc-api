@@ -7,6 +7,8 @@ const createError = require('http-errors');
 
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/users');
+const patientRouter = require('./routes/patients');
+const doctorRouter = require('./routes/doctors');
 
 const app = express();
 
@@ -19,6 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
 app.use('/users', userRouter);
+app.use('/patients', patientRouter);
+app.use('/doctors', doctorRouter);
 
 
 // catch 404 and forward to error handler

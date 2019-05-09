@@ -37,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
 
     User.associate = (models) => {
+        // One to One
         User.hasOne(models.Patient, { foreignKey: 'userId' });
         User.hasOne(models.Doctor, { foreignKey: 'userId' });
     };
