@@ -13,7 +13,6 @@ router.post('/seed', (req, res, next) => {
   seedUsers()
     .then((result) => res.json(result))
     .catch(err => {
-      console.log(err);
       return next(err)
     });
 });
