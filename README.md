@@ -50,6 +50,16 @@ create database tempus;
 node_modules/.bin/sequelize db:migrate
 ```
 
+### install dependencies
+```
+yarn
+```
+
+### run application
+```
+yarn dev
+```
+
 ### run seeds
 
 POST -> /users/seed
