@@ -50,6 +50,11 @@ node_modules/.bin/sequelize db:migrate
 
 POST -> /users/seed
 
+```
+curl -X POST \
+  http://localhost:3000/users/seed
+```
+
 ### Sample Users
 ```
 Patients:
